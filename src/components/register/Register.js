@@ -1,19 +1,63 @@
-// import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Adbello from '../../assets/logo.png';
 import './style.css'
 import { useForm } from "react-hook-form";
+import { createUser } from "../APIs/userService";
+// import axios from "axios";
+// import { useState, useEffect } from "react";
+// import { error } from "console";
 
 function Register() {
     const { register, handleSubmit, formState, reset } = useForm()
     const { errors } = formState;
+    const navigate = useNavigate([])
+    // const [users, setUsers] = useState([]);
 
-    const onSubmit = (data) => {
-        alert('Form is Submitted')
-        console.log(data);
-        reset();
-    }
+    const onSubmit = async (data) => {
+        try {
+            const response = await createUser(data);
+            alert('Form is Submitted');
+            console.log(response.data);
+            reset();
+            navigate('/manage-data');
+        } catch (error) {
+            console.error('There was an error submitting the form!', error);
+        }
+    };
 
+    // const fetchUsers = async () => {
+    //     try {
+    //         const response = await axios.get('http://localhost:8080/users')
+    //         setUsers(response.data);
+    //     } catch (error) {
+    //         console.error('There was an error submitting the form!', error);
+    //     }
+    // }
+
+    // const deleteUser = async (id) => {
+    //     try {
+    //         const response = await axios.delete(`http://localhost:8080/users/${id}`)
+    //         alert('User is Deleted');
+    //         console.log(response.data);
+    //         reset();
+    //     } catch (error) {
+    //         console.error('There was an error deleting the User!', error)
+    //     }
+    // }
+
+    // const updateUser = async (id, updatedData) => {
+    //     try{
+    //         const response = await axios.put(`http://localhost:8080/users/${id}`, updatedData)
+    //         alert('User is Updated')
+    //         console.log(response.data);
+    //     } catch (error){
+    //         console.error('There was an error updating the user!', error);
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     fetchUsers()
+    // }, []);
 
     return (
         <div id='register-container'>
@@ -47,7 +91,9 @@ function Register() {
                     required
                 >
                     <option value=' '>I'm here to...</option>
-                    <option value='learn'>Learn</option>
+                    <option value='1'>Learn to Front-end developer</option>
+                    <option value='2'>Learn to Back-end developer</option>
+                    <option value='3'>Learn to SQL developer</option>
                 </select>
                 {errors.reason && <div className='error'>{errors.reason.message}</div>}
                 <br />
@@ -89,11 +135,25 @@ function Register() {
                     </label>
                 </div>
                 {errors.terms && <div className='error'>{errors.terms.message}</div>}
-                <button type='submit'>Register</button>
+                <button type='submit' className="register-btn">Register</button>
                 <p className='login-link'>
                     Not a member yet? <Link to="/login">Login</Link>
                 </p>
             </form>
+
+            {/* <div className="user-list">
+                <h2>Registered Users</h2>
+                <ol>
+                    {users.map(user => (
+                        <li key={user.id} className="list-of-users">
+                            {user.fullName} - {user.phone}
+                            <button onClick={() => deleteUser(user.id, {fullName:'Updated Name'})}>Delete</button>
+                            <button onClick={() => updateUser(user.id)}>Update</button>
+                        </li>
+                    ))}
+                </ol>
+            </div> */}
+
         </div>
     )
 }

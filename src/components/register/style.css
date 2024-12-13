@@ -9,6 +9,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
+    overflow-x: scroll;
 }
 
 #register-container {
@@ -18,7 +20,7 @@ body {
     padding: 1rem;
     margin: 5rem;
     width: 100%;
-    max-width: 300px;
+    max-width: 600px;
 }
 
 .logo {
@@ -30,8 +32,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
+    max-width: 380px;
     padding: 30px 5px;
+    margin: 0 auto;
+    margin-left: 2rem;
 }
 
 .input-group input {
@@ -57,7 +61,7 @@ body {
     color: black;
 }
 
-button {
+.register-btn {
     background-color: #4fe3c1;
     color: white;
     width: 100%;
@@ -69,7 +73,7 @@ button {
     margin-top: 15px;
 }
 
-button:hover {
+.register-btn:hover {
     background-color: #0056b3;
     border: 1px solid #0056b3;
 }
@@ -123,22 +127,31 @@ input[type="checkbox"] {
     text-align: left;
 }
 
+
+
 /* media queries for responsive design */
 
 @media (max-width: 450px) {
     #register-container {
+        width: auto;
+        max-width: 500px;
         margin: 0 auto;
         margin-top: 5rem;
-        background-color: peachpuff;
+        background-color: #dc6bb1;
+        overflow: hidden;
     }
 
     .input-group {
-        width: 100%;
-        max-width: none;
+        max-width: 300px;
+    }
+
+    .register-btn {
+        max-width: 300px;
+        cursor: pointer;
     }
 
     .logo {
-        width: 100px;
+        /* width: 100px; */
         align-items: center;
     }
 }

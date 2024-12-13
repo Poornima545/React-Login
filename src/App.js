@@ -5,6 +5,9 @@ import PrivacyPolicy from './components/privacy-terms/PrivacyPolicy';
 import ForgotPassword from './components/forgot-password/ForgotPassword';
 import TermsAndConditions from './components/privacy-terms/TermsAndConditions';
 import Register from './components/register/Register'
+// import Users from './components/APIs/User';
+import UserUpdate from './components/APIs/UserUpdate';
+import UsersData from './components/APIs/UsersData';
 
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
           <Route path='privacy' element={<PrivacyPolicy />} />
           <Route path='/forgot-password' element={<ForgotPassword />} />
           <Route path='/terms-conditions' element={<TermsAndConditions />} />
+          {/* <Route path='/users' element={<Users />} /> */}
+          <Route path='/update-user/:id' element={<UserUpdate />} />
+          <Route path='/manage-data/' element={<UsersData />} />
         </Routes>
       </Router>
     </div>

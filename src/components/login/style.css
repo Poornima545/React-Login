@@ -5,36 +5,47 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
+    font-family: Arial, sans-serif;
+    display: flex; 
     justify-content: center;
-    align-items: center;
+     align-items: center; 
+    height: auto;
 }
 
 #login-container {
     background-color: #6f4baf;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    padding: 2rem;
+    padding: 1rem;
     margin: 5rem;
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
 }
 
 .logo {
     width: 150px;
 }
 
-.input-group input {
+.input-grp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    padding: 30px 5px;
+    margin: 0 auto;
+    margin-left: 2rem;
+}
+
+.input-grp input {
     background-color: #9476c0;
     color: #fff;
-    padding: 15px 20px;
+    padding: 15px 10px;
     font-size: 14px;
     outline: none;
     border: none;
 }
 
-button {
+.login-btn {
     background-color: #4fe3c1;
     color: white;
     width: 100%;
@@ -45,7 +56,7 @@ button {
     outline: none;
 }
 
-button:hover {
+.login-btn button:hover {
     background-color: #0056b3;
     border: 1px solid #0056b3;
 }
@@ -102,27 +113,24 @@ button:hover {
 }
 
 
-/*Media Queries for Responsive Design*/ 
+/*Media Queries for Responsive Design*/
 
 /* Mobile View(it change the color when width is below 450)  */
 @media (max-width: 450px) {
     #login-container {
+        width: auto;
+        max-width: 500px;
         margin: 0 auto;
         margin-top: 5rem;
         background-color: peachpuff;
     }
 
     .input-group {
-        width: 100%;
-        max-width: none;
+        max-width: 300px;
+        cursor: pointer;
     }
 
     .logo {
-        width: 100px;
-    }
-
-    .input-group input,
-    button {
-        width: 100%;
+        align-items: center;
     }
 }

@@ -19,7 +19,7 @@ function Login() {
     return (
         <div id='login-container'>
             <img src={Adbello} alt='adbello logo' className='logo' />
-            <form onSubmit={handleSubmit(onSubmit)} className='input-group'>
+            <form onSubmit={handleSubmit(onSubmit)} className='input-grp'>
                 <input
                     type='email'
                     placeholder='Email'
@@ -49,7 +49,7 @@ function Login() {
                 <p className='forgot-password'>
                     <Link to='/forgot-password'>Forgot Password?</Link>
                 </p>
-                <button type='submit'>Login</button>
+                <button type='submit' className='login-btn'>Login</button>
                 <p className='register-link'>
                     Not a member yet? <Link to="/register">Register</Link>
                 </p>

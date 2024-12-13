@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "email": "test@test1.com",
+      "fullName": "poornima",
+      "reason": "2",
+      "phone": "8660736176",
+      "password": "mnbgtrfe",
+      "id": "cde0"
+    },
+    {
+      "id": "a980",
+      "email": "test@test1.com",
+      "fullName": "poornima",
+      "reason": "learn",
+      "phone": "8497020408",
+      "password": "bgtyuijvfr",
+      "terms": true
+    },
+    {
+      "id": "bdd1",
+      "email": "test@poo.com",
+      "fullName": "Shashu",
+      "reason": "learn",
+      "phone": "8660736176",
+      "password": "nhbgtyyiopl",
+      "terms": true
+    },
+    {
+      "id": "605c",
+      "email": "test@test.com",
+      "fullName": "Shashu",
+      "reason": "1",
+      "phone": "8497020408",
+      "password": "nmhjuiko",
+      "terms": true
+    }
+  ]
+}
